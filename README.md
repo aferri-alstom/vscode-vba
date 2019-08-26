@@ -32,16 +32,16 @@ file from the
 [Sublime Text VBScript](https://github.com/SublimeText/VBScript)
 repository.
 
-# Snippets
+## Snippets
 
-## Basic code
+### Basic code
 
 - Variables declaration (dim/private/public var_name as type)
 - Variables declaration with inline instantiation
 - Operators (if, else, for ecc)
 - Subroutine/Function declaration with or without error handling
 
-## Usage
+### Usage
 
 start typing what you want to insert and suggestion should raise:
 
@@ -65,10 +65,10 @@ pubool --> public var_name as boolean
 For declaration with inline assignment type 'a' before the type:
 
 ```
-abool  --> dim var_name as boolean: var_name = value
+abool --> dim var_name as boolean: var_name = value
 ```
 
-# Installation
+## Installation
 
 Launch vscode and press [ctrl + p], paste the command below, and press enter.
 
