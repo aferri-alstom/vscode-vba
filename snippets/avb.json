@@ -7,6 +7,55 @@
         ],
         "description": "Insert a boolean variable"
     },
+    "PrivateBoolean": {
+        "prefix": "pbool",
+        "body": [
+            "private ${1:bool_var_name} as boolean\n%0"
+        ],
+        "description": "Insert a private boolean variable"
+    },
+    "PublicBoolean": {
+        "prefix": "pubool",
+        "body": [
+            "public ${1:bool_var_name} as boolean\n%0"
+        ],
+        "description": "Insert a public boolean variable"
+    },
+    "AssignBoolean": {
+        "prefix": "abool",
+        "body": [
+            "dim ${1:bool_var_name} as boolean: ${1:bool_var_name} = ${2:value}\n%0"
+        ],
+        "description": "Insert a boolean variable with inline assignment"
+    },
+    "Integer": {
+        "prefix": "int",
+        "body": [
+            "dim ${1:int_var_name} as integer\n%0"
+        ],
+        "description": "Insert an integer variable"
+    },
+    "PrivateInteger": {
+        "prefix": "pint",
+        "body": [
+            "private ${1:int_var_name} as integer\n%0"
+        ],
+        "description": "Insert a private integer variable"
+    },
+    "PublicInteger": {
+        "prefix": "puint",
+        "body": [
+            "public ${1:int_var_name} as integer\n%0"
+        ],
+        "description": "Insert a public integer variable"
+    },
+    "AssignInteger": {
+        "prefix": "aint",
+        "body": [
+            "dim ${1:int_var_name} as integer: ${1:int_var_name} = ${2:value}\n%0"
+        ],
+        "description": "Insert an integer variable with inline assignment"
+    },
     // Variables end
 
     // Functions
@@ -118,7 +167,7 @@
             "$LINE_COMMENT",
             "$LINE_COMMENT Created by ${1:author} on ${2:$CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR}.",
             "$LINE_COMMENT Modified by ${3:contributor} on $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR.",
-            "$LINE_COMMENT Copyright © Alstom Ferroviaria spa 2019. All rights reserved.",
+            "$LINE_COMMENT Copyright © ${4:company} spa 2019. All rights reserved.",
             "$LINE_COMMENT\n\n\n$0"
         ],
         "description": "Log variable value to console"
