@@ -4,7 +4,7 @@
   "description": "VBA language syntax highlighting support and code snippets for VSCode",
   "version": "1.3.0",
   "icon": "images/logo.png",
-  "publisher": "aferri-alstom",
+  "publisher": "aferri",
   "engines": {
     "vscode": "^1.8.1"
   },
