@@ -2,7 +2,7 @@
     "name": "avb",
     "displayName": "Visual Studio Code VBA",
     "description": "VBA language syntax highlighting support and code snippets for VSCode",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "icon": "images/logo.png",
     "publisher": "aferri",
     "engines": {
@@ -18,33 +18,33 @@
     },
     "contributes": {
         "languages": [
-        {
-            "id": "avb",
-            "aliases": [
-                "AVB",
-                "avb"
-            ],
-            "extensions": [
-                ".bas",
-                ".cls",
-                ".frm",
-                ".sym"
-            ],
-            "configuration": "./avb.configuration.json"
-        }
+            {
+                "id": "avb",
+                "aliases": [
+                    "AVB",
+                    "avb"
+                ],
+                "extensions": [
+                    ".bas",
+                    ".cls",
+                    ".frm",
+                    ".sym"
+                ],
+                "configuration": "./avb.configuration.json"
+            }
         ],
         "grammars": [
-        {
-            "language": "avb",
-            "scopeName": "source.avb",
-            "path": "./syntaxes/avb.json"
-        }
+            {
+                "language": "avb",
+                "scopeName": "source.avb",
+                "path": "./syntaxes/avb.json"
+            }
         ],
         "snippets": [
-        {
-            "language": "avb",
-            "path": "./snippets/avb.json"
-        }
+            {
+                "language": "avb",
+                "path": "./snippets/avb.json"
+            }
         ]
     }
 }
