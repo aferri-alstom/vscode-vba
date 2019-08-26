@@ -24,11 +24,11 @@
         "body": [
             "private sub ${1:subroutine_name}()",
             "\ton error goto ErrorHandler\n",
-            "\t$0\n",
+            "\t$2\n",
             "\ton error goto 0",
             "\texit sub",
             "ErrorHandler:",
-            "\tMOD_General.ErrorManagement \"${1:subroutine_name}\", \"${2:class_name}\"",
+            "\t$0",
             "end sub"
         ],
         "description": "Creates a private subroutine with a try-catch inside"
@@ -47,14 +47,64 @@
         "body": [
             "public sub ${1:subroutine_name}()",
             "\ton error goto ErrorHandler\n",
-            "\t$0\n",
+            "\t$2\n",
             "\ton error goto 0",
             "\texit sub",
             "ErrorHandler:",
-            "\tMOD_General.ErrorManagement \"${1:subroutine_name}\", \"${2:class_name}\"",
+            "\t$0",
             "end sub"
         ],
         "description": "Creates a public subroutine with a try-catch inside"
+    },
+    "Function": {
+        "prefix": "func",
+        "body": [
+            "private function ${1:function_name}() as ${2:return_type}",
+            "\t$0",
+            "\t${1:function_name} = ${3:value}",
+            "end function"
+        ],
+        "description": "Creates a private function"
+    },
+    "FunctionCatch": {
+        "prefix": "funce",
+        "body": [
+            "private function ${1:function_name}() as ${2:return_type}",
+            "\ton error goto ErrorHandler\n",
+            "\t$4\n",
+            "\t${1:function_name} = ${3:value}",
+            "\ton error goto 0",
+            "\texit sub",
+            "ErrorHandler:",
+            "\t$0",
+            "end sub"
+        ],
+        "description": "Creates a private subroutine with a try-catch inside"
+    },
+    "PublicFunction": {
+        "prefix": "pfunc",
+        "body": [
+            "public function ${1:function_name}() as ${2:return_type}",
+            "\t$0",
+            "\t${1:function_name} = ${3:value}",
+            "end function"
+        ],
+        "description": "Creates a public function"
+    },
+    "PublicFunctionCatch": {
+        "prefix": "pfunce",
+        "body": [
+            "public function ${1:function_name}() as ${2:return_type}",
+            "\ton error goto ErrorHandler\n",
+            "\t$4\n",
+            "\t${1:function_name} = ${3:value}",
+            "\ton error goto 0",
+            "\texit sub",
+            "ErrorHandler:",
+            "\t$0",
+            "end sub"
+        ],
+        "description": "Creates a public function with a try-catch inside"
     },
     // Functions end
 

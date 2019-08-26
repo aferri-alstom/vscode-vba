@@ -1,4 +1,4 @@
-# Visual Studio Code VBA
+# Visual Studio Code for Visual Basic
 
 [![Marketplace Version](https://vsmarketplacebadge.apphb.com/version/aferri.avb.svg)](https://marketplace.visualstudio.com/items?itemName=aferri.avb)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs/aferri.avb.svg)](https://marketplace.visualstudio.com/items?itemName=aferri.avb)
@@ -10,6 +10,7 @@
 - [Snippets](#snippets)
 - [Basic code](#basic-code)
 - [Installation](#installation)
+- [Usage](#usage)
 - [Contributing](#contributing)
 - [Contacts](#contacts)
 - [Links](#links)
@@ -23,7 +24,7 @@ This repo is a fork of the one published by spences10, all credits goes to him.
 
 ## Syntax Highlighting
 
-This package provides syntax highlighting and snippets of VBA.
+This package provides syntax highlighting and snippets for visual basic.
 
 Based off an import of the
 [VBScript.tmLanguage](https://github.com/SublimeText/VBScript/blob/master/VBScript.tmLanguage)
@@ -31,24 +32,49 @@ file from the
 [Sublime Text VBScript](https://github.com/SublimeText/VBScript)
 repository.
 
-## Snippets
+# Snippets
 
-### Basic code
+## Basic code
 
-- dim declarations
-- if/else
-- for/while
-- sub/function with errHandler
-- case
-
-## Installation
-
-Launch VS Code Quick Open (Ctrl+P), paste the following command, and
-press enter.
-
+- Variables declaration (dim/private/public var_name as type)
+- Variables declaration with inline instantiation
+- Operators (if, else, for ecc)
+- Subroutine/Function declaration with or without error handling
 ```
 ext install avb
 ```
+
+## Usage
+
+start typing what you want to insert and suggestion should raise:
+
+### Variables declaration
+
+Type the variable type:
+
+```
+bool   --> dim var_name as boolean
+int    --> dim var_name as integer
+string --> dim var_name as string
+```
+
+For private or public declaration type 'p' or 'pu' before the type:
+
+```
+pbool  --> private var_name as boolean
+pubool --> public var_name as boolean
+```
+
+For declaration with inline assignment type 'a' before the type:
+
+```
+abool  --> dim var_name as boolean: var_name = value
+```
+
+# Installation
+
+Launch vscode and press [ctrl + p], paste the command below, and press enter.
+
 
 ## Contributing
 
@@ -71,11 +97,6 @@ You can contact me in the following ways:
 - [Market](https://marketplace.visualstudio.com/items?itemName=spences10.VBA)
 
 ## Handy links
-
-I struggled to find how to generate a token after not doing anything
-with this project for well over a year:
-
-https://YOUR_USER_NAME.visualstudio.com/_details/security/tokens
 
 Some good documentation on the CLI:
 
