@@ -1,8 +1,8 @@
-# VSCode VBA
+# Visual Studio Code VBA
 
-[![Marketplace Version](https://vsmarketplacebadge.apphb.com/version/aferri.vba.svg)](https://marketplace.visualstudio.com/items?itemName=aferri.vba)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs/aferri.vba.svg)](https://marketplace.visualstudio.com/items?itemName=aferri.vba)
-[![Rating](https://vsmarketplacebadge.apphb.com/rating/aferri.vba.svg)](https://marketplace.visualstudio.com/items?itemName=aferri.vba)
+[![Marketplace Version](https://vsmarketplacebadge.apphb.com/version/aferri.avb.svg)](https://marketplace.visualstudio.com/items?itemName=aferri.avb)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/aferri.avb.svg)](https://marketplace.visualstudio.com/items?itemName=aferri.avb)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating/aferri.avb.svg)](https://marketplace.visualstudio.com/items?itemName=aferri.avb)
 
 <!-- TOC depthFrom:2 -->
 
@@ -47,7 +47,7 @@ Launch VS Code Quick Open (Ctrl+P), paste the following command, and
 press enter.
 
 ```
-ext install vba
+ext install avb
 ```
 
 ## Contributing
