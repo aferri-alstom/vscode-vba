@@ -1,14 +1,14 @@
 # VSCode VBA
 
-[![Marketplace Version](https://vsmarketplacebadge.apphb.com/version/aferri.vba.svg)](https://marketplace.visualstudio.com/items?itemName=spences10.vba)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs/aferri.vba.svg)](https://marketplace.visualstudio.com/items?itemName=spences10.vba)
-[![Rating](https://vsmarketplacebadge.apphb.com/rating/aferri.vba.svg)](https://marketplace.visualstudio.com/items?itemName=spences10.vba)
+[![Marketplace Version](https://vsmarketplacebadge.apphb.com/version/aferri.vba.svg)](https://marketplace.visualstudio.com/items?itemName=aferri.vba)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/aferri.vba.svg)](https://marketplace.visualstudio.com/items?itemName=aferri.vba)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating/aferri.vba.svg)](https://marketplace.visualstudio.com/items?itemName=aferri.vba)
 
 <!-- TOC depthFrom:2 -->
 
 - [Syntax Highlighting](#syntax-highlighting)
 - [Snippets](#snippets)
-  - [Basic code](#basic-code)
+- [Basic code](#basic-code)
 - [Installation](#installation)
 - [Contributing](#contributing)
 - [Contacts](#contacts)
