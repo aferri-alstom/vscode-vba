@@ -6,7 +6,7 @@
         "frm",
         "sym"
     ],
-    "foldingStartMarker": "(<(?i:(head|table|div|style|script|ul|ol|form|dl))\\b.*?>|\\{|^\\s*<?%?\\s*'?\\s*(?i:(sub|private\\s+sub|public\\s+sub|function|private\\s+function|public\\s+function|if|while|for))\\s*.*$)",
+    "foldingStartMarker": "(<(?i:(head|table|div|style|script|ul|ol|form|dl))\\b.*?>|\\{|^\\s*<?%?\\s*'?\\s*(?i:(sub|private\\s+sub|public\\s+sub|function|private\\s+function|public\\s+function|if|while|for|select))\\s*.*$)",
     "foldingStopMarker": "(</(?i:(head|table|div|style|script|ul|ol|form|dl))>?|\\}|^\\s*<?%?\\s*\\s*'?\\s*(?i:(end|next))\\s*.*$)",
     "keyEquivalent": "^~A",
     "name": "avb",
@@ -89,7 +89,7 @@
         },
         {
             "name": "storage.type.asp",
-            "match": "(?i:\\s*\\b(Call|Class|Const|Dim|Redim|Function|Sub|Private Sub|Public Sub|End sub|End Function|Property|End Property|Set|Let|Get|New|Randomize|Option Explicit|On Error Resume Next|On Error GoTo|ByRef|ByVal|Public Function|Private Function|Preserve)\\b\\s*)"
+            "match": "(?i:\\s*\\b(Call|Class|Const|Dim|Redim|sub|function|Private Sub|Public Sub|End sub|End Function|Property|End Property|Set|Let|Get|New|Randomize|option explicit|On Error Resume Next|On Error GoTo|ByRef|ByVal|Public Function|Private Function|Preserve|withevents)\\b\\s*)"
         },
         {
             "name": "storage.modifier.asp",

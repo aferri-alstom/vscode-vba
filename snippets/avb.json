@@ -56,6 +56,62 @@
         ],
         "description": "Insert an integer variable with inline assignment"
     },
+    "String": {
+        "prefix": "string",
+        "body": [
+            "dim ${1:int_var_name} as string\n%0"
+        ],
+        "description": "Insert a string variable"
+    },
+    "PrivateString": {
+        "prefix": "pstring",
+        "body": [
+            "private ${1:int_var_name} as string\n%0"
+        ],
+        "description": "Insert a private string variable"
+    },
+    "PublicString": {
+        "prefix": "pustring",
+        "body": [
+            "public ${1:int_var_name} as string\n%0"
+        ],
+        "description": "Insert a public string variable"
+    },
+    "AssignString": {
+        "prefix": "astring",
+        "body": [
+            "dim ${1:int_var_name} as string: ${1:int_var_name} = ${2:value}\n%0"
+        ],
+        "description": "Insert a string variable with inline assignment"
+    },
+    "Type": {
+        "prefix": "type",
+        "body": [
+            "dim ${1:int_var_name} as ${2:type}\n%0"
+        ],
+        "description": "Insert a variable"
+    },
+    "PrivateType": {
+        "prefix": "ptype",
+        "body": [
+            "private ${1:int_var_name} as ${2:type}\n%0"
+        ],
+        "description": "Insert a private variable"
+    },
+    "PublicType": {
+        "prefix": "putype",
+        "body": [
+            "public ${1:int_var_name} as ${2:type}\n%0"
+        ],
+        "description": "Insert a public variable"
+    },
+    "AssignType": {
+        "prefix": "atype",
+        "body": [
+            "dim ${1:int_var_name} as ${2:type}: ${1:int_var_name} = ${3:value}\n%0"
+        ],
+        "description": "Insert a variable with inline assignment"
+    },
     // Variables end
 
     // Functions

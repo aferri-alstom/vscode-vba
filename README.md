@@ -7,6 +7,7 @@
 
 ## Legend
 - [Contributors](#contributors)
+- [Changelog](#changelog)
 - [Syntax Highlighting](#syntax-highlighting)
 - [Snippets](#snippets)
 - [Basic code](#basic-code)
@@ -22,6 +23,11 @@
 
 ### This is a fork of the repository provided by [spences10](https://github.com/spences10)!
 All credits goes to this amazing guy.
+
+
+## Changelog
+
+- Added snippet for add a variable with custom type.
 
 
 ## Syntax Highlighting
@@ -52,6 +58,8 @@ Type the variable type:
 dim var_name as boolean  ' by typing bool
 dim var_name as integer  ' by typing int
 dim var_name as string   ' by typing string
+
+dim var_name as type     ' by typing type
 ```
 
 For private or public declaration type **p** or **pu** before the type:
@@ -62,14 +70,18 @@ public var_name as boolean   ' by typing pubool
 
 private var_name as integer  ' by typing pint
 public var_name as integer   ' by typing puint
+
+private var_name as type     ' by typing ptype
+public var_name as type      ' by typing putype
 ```
 
 For declaration with inline assignment type **a** before the type:
 
 ```vb
 dim var_name as boolean: var_name = value  ' by typing abool
-
 dim var_name as integer: var_name = value  ' by typing aint
+
+dim var_name as type: var_name = value     ' by typing atype
 ```
 
 ### Subroutine and functions
@@ -95,7 +107,7 @@ public sub sub_name()
 end sub
 
 ' by typing pfunc
-public function function_name() as boolean  ' Preferred return type will be asked when inserting the snippet
+public function function_name() as boolean  ' Return type will be asked when inserting the snippet
     ' Add something here
     function_name = true
 end function
@@ -117,7 +129,7 @@ ErrorHandler:
 end sub
 
 ' by typing pfunce ('p' for public, 'func' for function, and 'e' for add error handling)
-public function function_name() as boolean  ' Preferred return type will be asked when inserting the snippet
+public function function_name() as boolean  ' Return type will be asked when inserting the snippet
     on error goto ErrorHandler
 
     ' Add something here
