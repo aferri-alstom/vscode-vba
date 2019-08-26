@@ -40,9 +40,6 @@ repository.
 - Variables declaration with inline instantiation
 - Operators (if, else, for ecc)
 - Subroutine/Function declaration with or without error handling
-```
-ext install avb
-```
 
 ## Usage
 
@@ -75,6 +72,9 @@ abool  --> dim var_name as boolean: var_name = value
 
 Launch vscode and press [ctrl + p], paste the command below, and press enter.
 
+```
+ext install avb
+```
 
 ## Contributing
 
