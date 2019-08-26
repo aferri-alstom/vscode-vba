@@ -6,8 +6,8 @@
         "frm",
         "sym"
     ],
-    "foldingStartMarker": "(<(?i:(head|table|div|style|script|ul|ol|form|dl))\\b.*?>|\\{|^\\s*<?%?\\s*'?\\s*(?i:(sub|private\\s+Sub|public\\s+Sub|function|if|while|For))\\s*.*$)",
-    "foldingStopMarker": "(</(?i:(head|table|div|style|script|ul|ol|form|dl))>?|\\}|^\\s*<?%?\\s*\\s*'?\\s*(?i:(end|Next))\\s*.*$)",
+    "foldingStartMarker": "(<(?i:(head|table|div|style|script|ul|ol|form|dl))\\b.*?>|\\{|^\\s*<?%?\\s*'?\\s*(?i:(sub|private\\s+sub|public\\s+sub|function|private\\s+function|public\\s+function|if|while|for))\\s*.*$)",
+    "foldingStopMarker": "(</(?i:(head|table|div|style|script|ul|ol|form|dl))>?|\\}|^\\s*<?%?\\s*\\s*'?\\s*(?i:(end|next))\\s*.*$)",
     "keyEquivalent": "^~A",
     "name": "avb",
     "patterns": [
@@ -55,27 +55,6 @@
             ]
         },
         {
-            "captures": {
-                "1": {
-                    "name": "storage.type.function.asp"
-                },
-                "2": {
-                    "name": "entity.name.function.asp"
-                },
-                "3": {
-                    "name": "punctuation.definition.parameters.asp"
-                },
-                "4": {
-                    "name": "variable.parameter.function.asp"
-                },
-                "5": {
-                    "name": "punctuation.definition.parameters.asp"
-                }
-            },
-            "match": "^\\s*((?i:function|sub|public sub|private sub|public function|private function))\\s*([a-zA-Z_]\\w*)\\s*(\\()([^)]*)(\\)).*\\n?",
-            "name": "meta.function.asp"
-        },
-        {
             "begin": "('|(?i:Rem)\\s{1,})",
             "beginCaptures": [
                 {
@@ -86,14 +65,16 @@
             "name": "comment.line.apostrophe.asp"
         },
         {
-            "match": "(?i:\\b(If|Then|Else|ElseIf|Else If|End If|While|Wend|For|To|Each|In|Step|Case|Select|End Select|Return|Continue|Do|Until|Loop|Next|With|End With|Exit Do|Exit For|Exit Function|Exit Property|Exit Sub|IIf)\\b)",
-            "name": "keyword.control.asp"
+            "name": "keyword.control.asp",
+            "match": "(?i:\\b(if|then|else|elseif|else if|end if|iif|while|wend|for|to|each|in|step|case|select|end select|return|continue|do|until|loop|next|with|end with|exit do|exit for|exit sub|exit function|exit property)\\b)"
         },
         {
-            "match": "(?i:\\b(mod|and|not|is|or|xor|as)\\b)",
-            "name": "keyword.operator.asp"
+            "name": "keyword.operator.asp",
+            "match": "(?i:\\b(mod|and|or|xor|not|is|as)\\b)"
         },
         {
+            "name": "variable.other.dim.asp",
+            "match": "(?i:(dim)\\s*(?:(\\b[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?\\b)\\s*(,?)))",
             "captures": {
                 "1": {
                     "name": "storage.type.asp"
@@ -104,20 +85,19 @@
                 "3": {
                     "name": "meta.separator.comma.asp"
                 }
-            },
-            "match": "(?i:(dim)\\s*(?:(\\b[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?\\b)\\s*(,?)))",
-            "name": "variable.other.dim.asp"
+            }
         },
         {
-            "match": "(?i:\\s*\\b(Call|Class|Const|Dim|Redim|Function|Sub|Private Sub|Public Sub|End sub|End Function|Set|Let|Get|New|Randomize|Option Explicit|On Error Resume Next|On Error GoTo|ByRef|ByVal|Public Function|Private Function|Preserve)\\b\\s*)",
-            "name": "storage.type.asp"
+            "name": "storage.type.asp",
+            "match": "(?i:\\s*\\b(Call|Class|Const|Dim|Redim|Function|Sub|Private Sub|Public Sub|End sub|End Function|Property|End Property|Set|Let|Get|New|Randomize|Option Explicit|On Error Resume Next|On Error GoTo|ByRef|ByVal|Public Function|Private Function|Preserve)\\b\\s*)"
         },
         {
-            "match": "(?i:\\b(Private|Public|Default)\\b)",
-            "name": "storage.modifier.asp"
+            "name": "storage.modifier.asp",
+            "match": "(?i:\\b(private|public|default)\\b)"
+            
         },
         {
-            "match": "(?i:\\s*\\b(Empty|False|Nothing|Null|True)\\b)",
+            "match": "(?i:\\s*\\b(empty|true|false|nothing|null)\\b)",
             "name": "constant.language.asp"
         },
         {
@@ -155,7 +135,7 @@
             "name": "support.class.asp"
         },
         {
-            "match": "(?i:\\b(Contents|StaticObjects|ClientCertificate|Cookies|Form|QueryString|ServerVariables)\\b)",
+            "match": "(?i:\\b(Contents|StaticObjects|ClientCertificate|Cookies|Form|QueryString|ServerVariables|variable|collection)\\b)",
             "name": "support.class.collection.asp"
         },
         {
@@ -206,6 +186,7 @@
     ],
     "repository": {
         "round-brackets": {
+            "name": "meta.round-brackets",
             "begin": "\\(",
             "beginCaptures": [
                 {
@@ -218,12 +199,7 @@
                     "name": "punctuation.section.round-brackets.end.asp"
                 }
             ],
-            "name": "meta.round-brackets",
-            "patterns": [
-                {
-                    "include": "source.vba"
-                }
-            ]
+            "patterns": [{ "include": "source.vba" }]
         }
     },
     "scopeName": "source.vba",

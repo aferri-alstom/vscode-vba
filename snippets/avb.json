@@ -1,183 +1,98 @@
 {
+    // Variables
     "Boolean": {
-        "prefix": "Dimb",
+        "prefix": "bool",
         "body": [
-            "Dim bol${1:varName} As Boolean"
+            "dim ${1:bool_var_name} as boolean\n%0"
         ],
-        "description": "Boolean declaration"
+        "description": "Insert a boolean variable"
     },
-    "Integer": {
-        "prefix": "Dimi",
+    // Variables end
+
+    // Functions
+    "Subroutine": {
+        "prefix": "sub",
         "body": [
-            "Dim int${1:varName} As Integer"
+            "private sub ${1:subroutine_name}()",
+            "\t$0",
+            "end sub"
         ],
-        "description": "Integer declaration"
+        "description": "Creates a private subroutine"
     },
-    "Long": {
-        "prefix": "Diml",
+    "SubroutineCatch": {
+        "prefix": "sube",
         "body": [
-            "Dim lng${1:varName} As Long"
+            "private sub ${1:subroutine_name}()",
+            "\ton error goto ErrorHandler\n",
+            "\t$0\n",
+            "\ton error goto 0",
+            "\texit sub",
+            "ErrorHandler:",
+            "\tMOD_General.ErrorManagement \"${1:subroutine_name}\", \"${2:class_name}\"",
+            "end sub"
         ],
-        "description": "Long declaration"
+        "description": "Creates a private subroutine with a try-catch inside"
     },
-    "Single": {
-        "prefix": "Dims",
+    "PublicSubroutine": {
+        "prefix": "psub",
         "body": [
-            "Dim sng${1:varName} As Single"
+            "public sub ${1:subroutine_name}()",
+            "\t$0",
+            "end sub"
         ],
-        "description": "Single declaration"
+        "description": "Creates a public subroutine"
     },
-    "Double": {
-        "prefix": "Dimd",
+    "PublicSubroutineCatch": {
+        "prefix": "psube",
         "body": [
-            "Dim dbl${1:varName} As Double"
+            "public sub ${1:subroutine_name}()",
+            "\ton error goto ErrorHandler\n",
+            "\t$0\n",
+            "\ton error goto 0",
+            "\texit sub",
+            "ErrorHandler:",
+            "\tMOD_General.ErrorManagement \"${1:subroutine_name}\", \"${2:class_name}\"",
+            "end sub"
         ],
-        "description": "Double declaration"
+        "description": "Creates a public subroutine with a try-catch inside"
     },
-    "Currency": {
-        "prefix": "Dimc",
+    // Functions end
+
+    // Utilities
+    "Header": {
+        "prefix": "header",
         "body": [
-            "Dim cur${1:varName} As Currency"
+            "$LINE_COMMENT",
+            "$LINE_COMMENT $TM_FILENAME",
+            "$LINE_COMMENT ${TM_DIRECTORY/.*\\\\(.*)\\\\(.*)$/$1\\/$2/}",
+            "$LINE_COMMENT",
+            "$LINE_COMMENT Created by ${1:author} on ${2:$CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR}.",
+            "$LINE_COMMENT Modified by ${3:contributor} on $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR.",
+            "$LINE_COMMENT Copyright © Alstom Ferroviaria spa 2019. All rights reserved.",
+            "$LINE_COMMENT\n\n\n$0"
         ],
-        "description": "Currency declaration"
+        "description": "Log variable value to console"
     },
-    "Date": {
-        "prefix": "Dimdt",
+    "Explicit": {
+        "prefix": "exp",
         "body": [
-            "Dim dat${1:varName} As Date"
+            "option explicit\n$0"
         ],
-        "description": "Date declaration"
+        "description": "Adds option explicit"
     },
-    "String": {
-        "prefix": "Dims",
+    "Print": {
+        "prefix": "print",
         "body": [
-            "Dim str${1:varName} As String"
+            "Debug.Print ${1:var_name}"
         ],
-        "description": "String declaration"
+        "description": "Log variable value to console"
     },
-    "Object": {
-        "prefix": "Dimo",
+    "PrintString": {
+        "prefix": "prints",
         "body": [
-            "Dim obj${1:varName} As Object"
+            "Debug.Print \"$1\""
         ],
-        "description": "Object declaration"
-    },
-    "Variant": {
-        "prefix": "Dimv",
-        "body": [
-            "Dim bol${1:varName} As Variant"
-        ],
-        "description": "Variant declaration"
-    },
-    "If": {
-        "prefix": "Ife",
-        "body": [
-            "If ${1:expression} Then",
-            "    ",
-            "ElseIf ${1:expression} Then",
-            "    ",
-            "Else",
-            "    ",
-            "End If"
-        ],
-        "description": "If ElseIf Else code block"
-    },
-    "ForEach": {
-        "prefix": "ForE",
-        "body": [
-            "For Each ${1:element} In ${2:group} ",
-            "    ",
-            "Next ${1:element}"
-        ],
-        "description": "For Each code block"
-    },
-    "DoLoopw": {
-        "prefix": "DoLoopw",
-        "body": [
-            "Do",
-            "    ",
-            "Exit Do",
-            "    ",
-            "Loop While"
-        ],
-        "description": "Do Loop While code block"
-    },
-    "DoLoopu": {
-        "prefix": "DoLoopu",
-        "body": [
-            "Do",
-            "    ",
-            "    Exit Do",
-            "    ",
-            "Loop Until"
-        ],
-        "description": "Do Loop Until code block"
-    },
-    "DoWhile": {
-        "prefix": "DoWhile",
-        "body": [
-            "Do While ${1:condition}",
-            "    ",
-            "Loop"
-        ],
-        "description": "Do While Loop code block"
-    },
-    "DoUntil": {
-        "prefix": "DoUntil",
-        "body": [
-            "Do Until ${1:condition}",
-            "    ",
-            "Loop"
-        ],
-        "description": "Do Until Loop code block"
-    },
-    "Suberr": {
-        "prefix": "Suberr",
-        "body": [
-            "Sub ${1:subName}()",
-            "    '// add declarations",
-            "    On Error GoTo catchError",
-            "exitSub:",
-            "    Exit Sub",
-            "catchError:",
-            "    '// add error handling",
-            "    GoTo exitSub",
-            "End Sub"
-        ],
-        "description": "Sub code block with error handling"
-    },
-    "Functionerr": {
-        "prefix": "Functionerr",
-        "body": [
-            "Function ${1:functionName}() As ${2:functionType}",
-            "    '// add declarations",
-            "    On Error GoTo catchError",
-            "exitFunction:",
-            "    Exit Function",
-            "catchError:",
-            "    '// add error handling",
-            "    GoTo exitFunction",
-            "End Function"
-        ],
-        "description": "Function code block with error handling"
-    },
-    "Selectc": {
-        "prefix": "Selectc",
-        "body": [
-            "Select Case ${1:testexpression}",
-            "    Case ${2:expressionlist-n}",
-            "        ${3:statements-n}",
-            "    Case Else",
-            "        ${4:elsestatements}",
-            "End Select"
-        ],
-        "description": "Select Case code block"
-    },
-    "MsgBox": {
-        "prefix": "MsgBox",
-        "body": [
-            "MsgBox \"${1:msgPrompt}\", ${2:vbButtonType}, \"${3:msgTitle}\""
-        ],
-        "description": "Message box code block"
+        "description": "Log string to console"
     }
+    // Utilities end
 }
