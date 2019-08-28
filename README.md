@@ -28,6 +28,7 @@ All credits goes to this amazing guy.
 ## Changelog
 
 - Fixed error with some snippet.
+- Added highlight for methods.
 
 
 ## Syntax Highlighting

@@ -58,7 +58,7 @@
             "begin": "('|(?i:Rem)\\s{1,})",
             "beginCaptures": [
                 {
-                    "name": "punctuation.definition.comment.asp"
+                    "name": "comment.line.apostrophe.asp"
                 }
             ],
             "end": "(?=(\\n|%>))",
@@ -167,13 +167,37 @@
             "name": "support.type.vb.asp"
         },
         {
+            "name": "support.function.asp",
+            "match": "(?i:(\\b[\\w][a-zA-Z0-9_x7f-xff]*?\\b)(?=\\(\\)?))",
             "captures": {
                 "1": {
                     "name": "entity.name.function.asp"
                 }
+            }
+            
+        },
+        {
+            "begin": "([.])([A-Z])",
+            "beginCaptures": {
+                "1": {
+                    "name": "meta.separator.dot.asp"
+                },
+                "2": {
+                    "name": "entity.name.function.asp"
+                }
             },
-            "match": "(?i:(\\b[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?\\b)(?=\\(\\)?))",
-            "name": "support.function.asp"
+            "patterns": [
+                {
+                    "match": "\\w+",
+                    "name": "entity.name.function.asp"
+                }
+            ],
+            "end": "\\b",
+            "endCaptures": [
+                {
+                    "name": "meta.separator.end.asp"
+                }
+            ]
         },
         {
             "match": "(?i:((?<=(\\+|=|-|\\&|\\\\|/|<|>|\\(|,))\\s*\\b([a-zA-Z_xf-xff][a-zA-Z0-9_xf-xff]*?)\\b(?!(\\(|\\.))|\\b([a-zA-Z_xf-xff][a-zA-Z0-9_xf-xff]*?)\\b(?=\\s*(\\+|=|-|\\&|\\\\|/|<|>|\\(|\\)))))",
