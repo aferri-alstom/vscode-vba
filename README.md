@@ -27,7 +27,7 @@ All credits goes to this amazing guy.
 
 ## Changelog
 
-- Added snippet for add a variable with custom type.
+- Fixed error with some snippet.
 
 
 ## Syntax Highlighting
